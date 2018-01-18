@@ -1,7 +1,6 @@
 # docker-compose-ghost-quickstart
-<<<<<<< HEAD
 Ghost blogging platform quick start with docker compose
-=======
+
 Quick start docker composition of Ghost blog with Node, NGINX proxy with SSL and mysql database.
 
 ## Operating ENV
@@ -77,4 +76,4 @@ The ./ghost/content directory (on docker host machine) gets mounted inside your 
 ## References:
 + [Docker Compose for Ghost by John Washam](https://github.com/jwasham/docker-ghost-template)
 + [Ghost @ Dockerhub](https://hub.docker.com/_/ghost/)
->>>>>>> Initial commits
+
