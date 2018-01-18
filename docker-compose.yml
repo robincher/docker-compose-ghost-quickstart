@@ -1,0 +1,48 @@
+version: '2'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    hostname: ghost-nginx
+    ports:
+      - 443:443
+    volumes:
+      - ./nginx/ssl/yourhost.xyz.key:/etc/nginx/yourhost.xyz.key:ro
+      - ./nginx/ssl/yourhost.xyz.crt:/etc/nginx/yourhost.xyz.crt:ro
+      - ./nginx/conf/ghost.conf:/etc/nginx/conf.d/ghost.conf:z
+    links:
+      - ghost
+    restart: always
+
+  ghost:
+    image: ghost:latest
+    container_name: ghost
+    hostname: ghost
+    volumes:
+      - ./ghost/config.js:/var/lib/ghost/config.js:z  #Overwrite default setting to use mysql
+      - ./ghost/content:/var/lib/ghost/content:z
+    environment: # this section can be commented to start in dev mode by default
+      - NODE_ENV=production
+      - WEB_DOMAIN=yourhost.xyz
+      - DB_DATABASE=ghostdata
+      - DB_USER=ghostusr
+      - DB_PASSWORD=xyz #please change this
+    restart: always
+    links:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    volumes:
+       - ./dbdata:/var/lib/mysql:z  # Persist storage
+    expose:
+      - "3306"
+    environment:
+      # Beware of special characters in password that can be interpreted by shell
+      - MYSQL_ROOT_PASSWORD= #specify your root pass
+      - MYSQL_DATABASE=ghostdata
+      - MYSQL_USER=ghostusr
+      - MYSQL_PASSWORD= xyx #please change this
+    restart: always
