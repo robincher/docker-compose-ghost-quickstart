@@ -1,4 +1,7 @@
+# User-specific stuff:
+.idea/
 *.iml
-*.idea/*
+
+# Certificates related files
 *.crt
 *.key
