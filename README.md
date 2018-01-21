@@ -5,6 +5,10 @@ The compose file will pull and run ghost ,nginx and mysql containers. Additional
 
 If you want to test out Ghost locally and just to explore its feature, you can consider installing ghost-cli using npm. 
 
+## Overview
+
+![ghost.png](https://github.com/robincher/docker-compose-ghost-quickstart/blob/master/ghost-compose-context.png)
+
 ## Operating ENV
 - **Operating System** Redhat Enterprise Linux 5.7 
 
