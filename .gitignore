@@ -3,4 +3,5 @@
 *.iml
 
 # Certificates related files
-nginx/ssl/
+nginx/ssl/*.crt
+nginx/ssl/*.key

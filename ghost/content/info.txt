@@ -1,1 +1,1 @@
-Mounting here!
+Mounting here! Path to save ghost data after bringing the containers up
