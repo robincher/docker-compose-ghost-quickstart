@@ -40,18 +40,6 @@ config = {
 
         // #### Database
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
-
-        //database: {
-        //    client: 'mysql',
-        //    connection: {
-        //        host     : 'mysql',
-        //        user     : process.env.DB_USER,
-        //        password : process.env.DB_PASSWORD,
-        //        database : 'ghost_dev',
-        //        charset  : 'utf8mb4'
-        //    }
-        //},
-
         database: {
             client: 'sqlite3',
             connection: {
