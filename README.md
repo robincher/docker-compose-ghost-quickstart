@@ -67,11 +67,12 @@ Log in to the Ghost admin, go to Settings > General, and at the bottom is the Th
 
 ### How does that work?
 
-The ./ghost/content directory (on docker host machine) gets mounted inside your ghost container at /var/lib/ghost when the container runs. See the docker-compose.yml to see where this mount is happening.
+The ./ghost/content directory (on docker host machine) gets mounted inside your ghost container folder /var/lib/ghost when the container starts running. See docker-compose.yml for more details
 
 ## Security
 
 - Only NGINX's ports (443) are exposed at host level.
+- Support TLS version 1.2 for incoming traffic
 
 ## License 
 [MIT LICENSE ](https://github.com/robincher/docker-compose-ghost-quickstart/blob/master/LICENSE)
