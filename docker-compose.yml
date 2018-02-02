@@ -28,6 +28,9 @@ services:
       - DB_DATABASE=ghostdata
       - DB_USER=ghostusr
       - DB_PASSWORD=xyz #please change this
+      - "EMAIL_SERVICE=MailService" # Define your own SMTP Service
+      - "EMAIL_USER=POSTMASTER_EMAIL_ADDRESS" # provided by the mail service provider for sending via SMTP
+      - "EMAIL_PASSWORD=PASSWORD" #Password
     restart: always
     links:
       - mysql

@@ -26,6 +26,16 @@ config = {
             host: '0.0.0.0',
             port: '2368'
         },
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: process.env.EMAIL_SERVICE,
+                auth: {
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASSWORD
+                }
+            }
+        },
         // this line was added because using NODE_ENV=production caused permission errors
         paths: {
             contentPath: path.join(process.env.GHOST_CONTENT, '/')
