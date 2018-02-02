@@ -27,11 +27,11 @@ services:
       - WEB_DOMAIN=yourhost.xyz
       - DB_DATABASE=ghostdata
       - DB_USER=ghostusr
-      - DB_PASSWORD=xyz #please change this
-      - "EMAIL_SERVICE=MailService" # Optional ENV 1 : Define a Preconfigured services for using SMTP with Gmail, Hotmail etc
-      - "EMAIL_HOST=xyz.yourmaildomain.com" #Optional ENV 2 : Define this if you are using customized / internal email host
-      - "EMAIL_HOST_PORT=25 or 465" #Optional ENV  2: Email Host Port Number
-      - "EMAIL_USER=POSTMASTER_EMAIL_ADDRESS" # Optional ENV  2:provided by the mail service provider for sending via SMTP
+      - "DB_PASSWORD=xyz" #please change this
+      - EMAIL_SERVICE=Gmail # Optional ENV 1 : Define a Preconfigured services for using SMTP with Mailgun, Gmail, Hotmail etc
+      - EMAIL_HOST=xyz.yourmaildomain.com #Optional ENV 2 : Define this if you are using customized / internal email host
+      - EMAIL_HOST_PORT=25  #Optional ENV  2: Email Host Port Number. Set as 465 if it is secure smtp
+      - EMAIL_USER=POSTMASTER_EMAIL_ADDRESS # Optional ENV  2:provided by the mail service provider for sending via SMTP
       - "EMAIL_PASSWORD=PASSWORD" : #Optional ENV  2: Password
     restart: always
     links:
