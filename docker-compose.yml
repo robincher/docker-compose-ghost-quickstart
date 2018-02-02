@@ -28,9 +28,11 @@ services:
       - DB_DATABASE=ghostdata
       - DB_USER=ghostusr
       - DB_PASSWORD=xyz #please change this
-      - "EMAIL_SERVICE=MailService" # Define your own SMTP Service
-      - "EMAIL_USER=POSTMASTER_EMAIL_ADDRESS" # provided by the mail service provider for sending via SMTP
-      - "EMAIL_PASSWORD=PASSWORD" #Password
+      - "EMAIL_SERVICE=MailService" # Optional ENV 1 : Define a Preconfigured services for using SMTP with Gmail, Hotmail etc
+      - "EMAIL_HOST=xyz.yourmaildomain.com" #Optional ENV 2 : Define this if you are using customized / internal email host
+      - "EMAIL_HOST_PORT=25 or 465" #Optional ENV  2: Email Host Port Number
+      - "EMAIL_USER=POSTMASTER_EMAIL_ADDRESS" # Optional ENV  2:provided by the mail service provider for sending via SMTP
+      - "EMAIL_PASSWORD=PASSWORD" : #Optional ENV  2: Password
     restart: always
     links:
       - mysql
