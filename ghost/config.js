@@ -26,16 +26,35 @@ config = {
             host: '0.0.0.0',
             port: '2368'
         },
+       
+        // Using a custom mail service
         mail: {
             transport: 'SMTP',
+            logger: true, //Set this if you want to log
             options: {
-                service: process.env.EMAIL_SERVICE,
+                host: EMAIL_HOST,
+                secureConnection: false ,
+                port: EMAIL_HOST_PORT,
                 auth: {
-                    user: process.env.EMAIL_USER,
-                    pass: process.env.EMAIL_PASSWORD
-                }
+                    user: EMAIL_USER, // mailgun username
+                    pass: EMAIL_PASSWORD  // mailgun password
+                 }
             }
         },
+        // Use this if you are using a preconfigured email service for SMTP
+        // Example mail config 
+        // Visit http://support.ghost.org/mail for instructions
+        
+        //mail: {
+        //    transport: 'SMTP',
+        //   options: {
+        //        service: process.env.EMAIL_SERVICE,
+        //        auth: {
+        //            user: process.env.EMAIL_USER,
+        //            pass: process.env.EMAIL_PASSWORD
+        //        }
+        //    }
+       // },
         // this line was added because using NODE_ENV=production caused permission errors
         paths: {
             contentPath: path.join(process.env.GHOST_CONTENT, '/')
