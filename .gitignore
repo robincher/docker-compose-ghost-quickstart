@@ -5,3 +5,6 @@
 # Certificates related files
 nginx/ssl/*.crt
 nginx/ssl/*.key
+
+#Config files
+*.lab.json
