@@ -32,9 +32,9 @@ If you want to test out Ghost locally and just to explore its feature, you can c
 
 ## How to Use It
 0. Clone this project into the server's filesystem.
-0. Edit environment settings in docker-compose.yml as required
-    - WEB_DOMAIN under ghost service (Your registered domain)
-    - Database settings - under ghost and mysql services 
+0. Edit settings in config.<<env>>.json and docker-compose.yml as required
+    - config.production.json and update the fields as required
+    - Database Initial set-up settings - under ghost and mysql services in docker-compose file
 0. Add your TLS/SSL certificate and key to ./nginx/ssl 
 0. Set your registered domain (server_name) in ./nginx/conf/ghost.conf (must match the common name in your TLS/SSL certificate)
 0. Run docke-compose within your Linux environment 
