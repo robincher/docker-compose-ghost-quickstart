@@ -26,7 +26,7 @@ ghost install local # Running on Dev
 
 ## Technology Stack
 - Node.js
-    - Ghost blog software
+    - Ghost blog software version 1.x
 - NGINX
     - proxying port 80 calls to the Node web server on port 2368
 - MySQL database
@@ -39,27 +39,27 @@ ghost install local # Running on Dev
 - Access to your domain's DNS.
 
 ## How to Use It
-0. Clone this project into the server's filesystem.
-0. Edit settings in config.<<env>>.json and docker-compose.yml as required
+1. Clone this project into the server's filesystem.
+2. Edit settings in config.<<env>>.json and docker-compose.yml as required
     - config.production.json and update the fields as required
-    - Database Initial set-up settings - under ghost and mysql services in docker-compose file
-0. Add your TLS/SSL certificate and key to ./nginx/ssl 
-0. Set your registered domain (server_name) in ./nginx/conf/ghost.conf (must match the common name in your TLS/SSL certificate)
-0. Run docke-compose within your Linux environment 
+    - Database Initial set-up settings - under ghost and mysql services in docker-compose file, indicate the env variables
+3. Add your TLS/SSL certificate and key to ./nginx/ssl 
+4. Set your registered domain (server_name) in ./nginx/conf/ghost.conf (must match the common name in your TLS/SSL certificate)
+5. Run docke-compose within your Linux environment 
     0. ```docker-compose build```
     0. ```docker-compose up -d```  (you can remove the -d if you want to see logs, then Ctrl+C to stop all containers)
-0. Go to https://YOUR_DOMAIN/admin to set up your blog.
-0. Once you've made your admin account using that wizard, go back to: https://YOUR_DOMAIN/admin
-0. Log in and enjoy.
-0. Stopping and remove all containers : ```docker-compose down --remove-orphans``` 
+6. Go to https://YOUR_DOMAIN/admin to set up your blog.
+7. Once you've made your admin account using that wizard, go back to: https://YOUR_DOMAIN/admin
+8. Log in and enjoy.
+9. Stopping and remove all containers : ```docker-compose down --remove-orphans``` 
 
 ## How to back up your database
-0. Run "docker-compose ps" to get a list of running containers.
-0. Locate the name of the mysql container.
-0. Run this command to get the container's internal IP: docker inspect --format='{{.NetworkSettings.IPAddress}}' THAT_CONTAINER-NAME
-0. In your favorite database GUI tool (like Navicat or DataGrip), create a new connection via SSH tunnel to the host machine
-0. Use the internal IP address and database user and password to connect to database once SSH tunnel is established to host.
-0. You'll have access to the data so you can view data and run backups.
+1. Run "docker-compose ps" to get a list of running containers.
+2. Locate the name of the mysql container.
+3. Run this command to get the container's internal IP: docker inspect --format='{{.NetworkSettings.IPAddress}}' THAT_CONTAINER-NAME
+4. In your favorite database GUI tool (like Navicat or DataGrip), create a new connection via SSH tunnel to the host machine
+5. Use the internal IP address and database user and password to connect to database once SSH tunnel is established to host.
+6. You'll have access to the data so you can view data and run backups.
 
 ### To install another theme
 
