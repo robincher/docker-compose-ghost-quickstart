@@ -15,7 +15,7 @@ ghost install local # Running on Dev
 
 ## Overview
 
-![ghost.png](https://github.com/robincher/docker-compose-ghost-quickstart/blob/master/ghost-compose-context.png)
+![ghost.png](https://github.com/robincher/docker-compose-ghost-quickstart/blob/master/assets/ghost-compose-context.png)
 
 ## Operating ENV
 - **Operating System** Redhat Enterprise Linux 5.7 
@@ -80,7 +80,7 @@ The ./ghost/content directory (on docker host machine) gets mounted inside your 
 ## Security and Networking
 
 - Only NGINX's ports (443) are exposed at host level.
-- Support TLS version 1.2 for incoming traffic
+- Support only TLS version 1.2 for incoming traffic
 - HTTP/2 Enabled for Nginx Reverse Proxy
 
 ## License 
