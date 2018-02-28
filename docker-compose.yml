@@ -25,7 +25,7 @@ services:
     expose:
     - "3306"
     environment: # this section can be commented to start in dev mode by default
-      - NODE_ENV=production
+      - NODE_ENV=production # set either production or development, then it will load the respective config
     restart: always
     links:
       - mysql
