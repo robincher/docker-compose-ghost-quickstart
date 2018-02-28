@@ -42,7 +42,31 @@ ghost install local # Running on Dev
 1. Clone this project into the server's filesystem.
 2. Edit settings in config.<<env>>.json and docker-compose.yml as required
     - config.production.json and update the fields as required
-    - Database Initial set-up settings - under ghost and mysql services in docker-compose file, indicate the env variables
+
+    In docker-compose.yml, append the env specific config file (config.production.json or config.development.json) under the **ghost** service. Examples config file are shared within this repository.
+
+    Example :
+        
+    ```
+    ..
+    volumes:
+      - $PWD/ghost/volumes/config.production.json:/var/lib/ghost/config.production.json:z #overwrite default settings 
+      - ./ghost/content:/var/lib/ghost/content:z
+    ```
+
+    - Database Initial set-up settings - under  mysql services in docker-compose file, indicate the env variables
+
+   Example :
+
+    ```
+        environment:
+      # Beware of special characters in password that can be interpreted by shell
+      - MYSQL_ROOT_PASSWORD= #specify your root pass
+      - MYSQL_DATABASE=ghostdata
+      - MYSQL_USER=ghostusr
+      - MYSQL_PASSWORD= xyx #please change this
+    ```
+
 3. Add your TLS/SSL certificate and key to ./nginx/ssl 
 4. Set your registered domain (server_name) in ./nginx/conf/ghost.conf (must match the common name in your TLS/SSL certificate)
 5. Run docke-compose within your Linux environment 
