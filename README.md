@@ -15,12 +15,9 @@ ghost install local # Running on Dev
 ```
 
 
-
 ## Table of Contents
 - [System Overview](#overview)
 - [Opearting Env](#opearting-env)
-    * [Interface Walkthrough](#walkthrough)
-    * [Security Signature Token Example](#security-signature-token-example)
 - [Technolgoy Stack](#technology-stack)
 - [Preparation](#technology-stack)
 - [How to use it](#how-to-use-it)
