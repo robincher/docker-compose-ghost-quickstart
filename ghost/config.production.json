@@ -16,6 +16,7 @@
         }
     },
     "mail": {
+        "from": "'Custom Name' <myemail@address.com>", 
         "transport": "SMTP",
         "logger": true,
         "options": {
