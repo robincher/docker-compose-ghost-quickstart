@@ -1,6 +1,7 @@
 # Docker Compose Quickstart for Ghost Blogging Platform
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/robincher/docker-compose-ghost-quickstart/blob/master/LICENSE)
 
 Quick start docker composition for Ghost blog with Node, NGINX proxy with TLS/SSL and MySQL database. The intention is to get a general feel of depolying Ghost in production mode, where each component (Web & DB) are deployed seperately. This supports scaling and helps to isolate failure (if any).
 
