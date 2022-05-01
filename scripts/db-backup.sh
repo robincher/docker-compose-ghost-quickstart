@@ -15,7 +15,7 @@ docker stop ghost
 echo "Backing up Ghost Data Folder..."
 tar -zcvf /root/backup/ghost/ghost-$FULLDATE.tar.gz -C /root/docker-compose-ghost-quickstart/ghost/dbdata
 
-echo "Starting Ghsot Service..."
+echo "Starting Ghost Service..."
 docker start blog_ghost_1
 
 echo "## END BACKUP GHOST BLOG - `date +%A` - `date +%Y-%m-%d_%Hh%Mm%Ss` ##########"
