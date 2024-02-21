@@ -1,7 +1,7 @@
 {
-    "url": "http://yourdomain",
+    "url": "https://modele-mentalne.pl",
     "server": {
-        "port": 2368,
+        "port": 8000,
         "host": "0.0.0.0"
     },
     "database": {
@@ -16,7 +16,7 @@
         }
     },
     "mail": {
-        "from": "'Custom Name' <myemail@address.com>", 
+        "from": "'Rafal Gawlik' rafal.gawlik@gmail.com", 
         "transport": "SMTP",
         "logger": true,
         "options": {
